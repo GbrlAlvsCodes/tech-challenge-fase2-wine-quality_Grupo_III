@@ -1,11 +1,9 @@
-[README.md](https://github.com/user-attachments/files/34244592/README.md)
 # data/
 
 
 | Pasta | Conteúdo |
 |---|---|
 | `raw/` | `WineQT.csv`, exatamente como baixado do Kaggle, nunca editado |
-| `processed/` | `dataset_tratado.csv`, gerado pelo `notebooks/02_preprocessamento.ipynb` |
 
 ## Dataset
 
