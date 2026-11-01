@@ -1,30 +1,32 @@
-[README.md](https://github.com/user-attachments/files/34244471/README.md)
 # notebooks/
-
-Ordem numerada obrigatória. Cada notebook roda de cima para baixo em ambiente limpo
-(`Kernel → Restart & Run All`) sem erro. É isso que garante a reprodutibilidade.
 
 | Arquivo | Escopo |
 |---|---|
-| `Projeto_II_Vinho.ipynb` | projeto completo em um único notebook, com todas as etapas e gráficos. Versão original do trabalho, que deu origem aos quatro notebooks acima |
+| `Projeto_II_Vinho.ipynb` | projeto completo em um único notebook: compreensão do problema, análise exploratória (distribuições, outliers, correlações, balanceamento), pré-processamento, modelagem (Regressão Logística, Árvore de Decisão e Random Forest com validação cruzada e GridSearchCV), avaliação (métricas, matriz de confusão, curva ROC), importância das variáveis e implicações práticas |
+
+## Seções do notebook
+
+| Seção | Conteúdo |
+|---|---|
+| 1. Compreensão do problema | contexto de negócio, fonte e dicionário de variáveis, nulos e duplicatas |
+| 2. Análise exploratória | distribuição das notas e das variáveis, outliers, correlações, balanceamento e análise por categoria (Baixo/Médio x Alto) |
+| 3. Pré-processamento | decisões sobre nulos, duplicatas, outliers, variável alvo, padronização e feature engineering |
+| 4. Modelos | split estratificado, modelos sem ajuste, com GridSearchCV e com GridSearchCV + padronização |
+| 5. Comparação dos modelos | métricas da classe Alto, matriz de confusão, curva ROC e escolha do modelo |
+| 6. Importância das variáveis | importância no Random Forest, coeficientes da Regressão Logística e aplicações práticas |
 
 ## Como executar
 
 1. Baixe o `WineQT.csv` (instruções em `data/README.md`) e salve em `data/raw/WineQT.csv`.
-2. Instale as dependências: `pip install -r requirements.txt`.
-
-```
-`Projeto_II_Vinho.ipynb` não depende dos outros: lê o CSV direto e roda tudo sozinho.
-Ele foi desenvolvido no Google Colab, então o caminho do arquivo aponta para
-`/content/WineQT.csv`. Para rodar localmente, troque `CAMINHO_DADOS` para
-`'../data/raw/WineQT.csv'`.
+2. O notebook foi desenvolvido no Google Colab e lê o arquivo de `/content/WineQT.csv`:
+   - **No Colab:** faça upload do `WineQT.csv` na sessão e rode normalmente.
+   - **Localmente:** na segunda célula, troque `CAMINHO_DADOS` para `'../data/raw/WineQT.csv'`.
+3. Execute com `Kernel → Restart & Run All`.
 
 ## Regras
 
-- **Antes do commit:** verifique que a numeração das células está em ordem crescente
-  (`[1]`, `[2]`, `[3]`...). Células fora de ordem indicam execução caótica.
-- Mantenha as saídas dos gráficos salvas no notebook. O avaliador precisa ver os
-  resultados sem executar nada.
+- A numeração das células está em ordem crescente (`[1]`, `[2]`, `[3]`...).
+- As saídas dos gráficos ficam salvas no notebook, para que o avaliador veja os resultados
+  sem executar nada.
 - Todo gráfico tem um parágrafo de interpretação em markdown logo abaixo.
-- A primeira célula de cada notebook define `RANDOM_STATE = 42` e os caminhos.
-  O valor é o mesmo em todos os notebooks.
+- `RANDOM_STATE = 42` é definido no início e usado em todos os pontos com aleatoriedade.
