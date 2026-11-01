@@ -1,0 +1,10 @@
+etapa,modelo,taxa_de_acerto,precisao,recall,f1,f1_validacao_cruzada
+Sem ajuste,Regressão Logística,0.79,0.37,0.81,0.51,0.49
+Sem ajuste,Árvore de Decisão,0.84,0.41,0.48,0.44,0.40
+Sem ajuste,Random Forest,0.91,0.90,0.33,0.49,0.36
+GridSearchCV,Regressão Logística,0.80,0.38,0.81,0.52,0.50
+GridSearchCV,Árvore de Decisão,0.81,0.40,0.78,0.52,0.49
+GridSearchCV,Random Forest,0.89,0.56,0.67,0.61,0.55
+GridSearchCV + padronização,Regressão Logística,0.79,0.36,0.78,0.49,0.52
+GridSearchCV + padronização,Árvore de Decisão,0.81,0.40,0.78,0.52,0.49
+GridSearchCV + padronização,Random Forest,0.86,0.49,0.74,0.59,0.54
