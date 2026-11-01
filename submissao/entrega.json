@@ -1,13 +1,15 @@
 {
-  "turma": "12DTAT",
-  "grupo": "Grupo 00",
+  "turma": "15DTAT",
+  "grupo": "Grupo 3",
   "integrantes": [
-    { "nome": "Nome Completo do Integrante", "rm": "RM000000" },
-    { "nome": "Nome Completo do Integrante", "rm": "RM000000" }
+    { "nome": "Gabriel Alves da Silva", "rm": "RM376192" },
+    { "nome": "Dimitria Doi", "rm": "RM376922" },
+    { "nome": "Breno Plada Delege", "rm": "RM377058" },
+    { "nome": "Yan Souza Montes", "rm": "RM376051" }
   ],
   "links": {
-    "repositorio": "https://github.com/usuario/nome-do-repositorio",
-    "video": "https://www.youtube.com/watch?v=xxxxxxxxxxx",
-    "apresentacao": "https://github.com/usuario/nome-do-repositorio/blob/main/docs/apresentacao_executiva.pdf"
+    "repositorio": "https://github.com/GbrlAlvsCodes/tech-challenge-fase2-wine-quality_Grupo_III",
+    "video": "",
+    "apresentacao": "https://github.com/GbrlAlvsCodes/tech-challenge-fase2-wine-quality_Grupo_III/blob/main/docs/apresentacao_executiva.pdf"
   }
 }
