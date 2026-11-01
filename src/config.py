@@ -1,12 +1,12 @@
 """Configuração central do projeto: caminhos, semente e constantes.
 
-Importe daqui em todos os notebooks para que os resultados sejam reproduzíveis.
+Os mesmos valores usados nos notebooks (primeira célula de cada um).
 """
 
 from pathlib import Path
 
 # --- Semente -----------------------------------------------------------------
-# Use em TODO ponto que envolva aleatoriedade: train_test_split, modelos, CV.
+# Usada em todo ponto com aleatoriedade: train_test_split, modelos, CV.
 RANDOM_STATE = 42
 
 # --- Caminhos ----------------------------------------------------------------
@@ -20,8 +20,10 @@ MODELS = RESULTS / "models"
 METRICS = RESULTS / "metrics"
 
 # --- Dataset -----------------------------------------------------------------
-RAW_FILE = DATA_RAW / "dataset.csv"   # PREENCHER: nome real do arquivo
-TARGET = "target"                      # PREENCHER: nome da variável alvo
+RAW_FILE = DATA_RAW / "WineQT.csv"
+PROCESSED_FILE = DATA_PROCESSED / "dataset_tratado.csv"
+TARGET = "qualidade_do_vinho"      # 1 = Alto (nota >= 7), 0 = Baixo/Médio
+LIMIAR_ALTO = 7
 
 # --- Split -------------------------------------------------------------------
 TEST_SIZE = 0.2

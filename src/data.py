@@ -2,11 +2,11 @@
 
 import pandas as pd
 
-from src.config import DATA_PROCESSED, RAW_FILE
+from src.config import PROCESSED_FILE, RAW_FILE
 
 
 def load_raw() -> pd.DataFrame:
-    """Lê o dataset bruto de data/raw/ sem nenhuma transformação."""
+    """Lê o WineQT.csv de data/raw/ sem nenhuma transformação."""
     if not RAW_FILE.exists():
         raise FileNotFoundError(
             f"{RAW_FILE} não encontrado. Veja data/README.md para baixar o dataset."
@@ -14,11 +14,12 @@ def load_raw() -> pd.DataFrame:
     return pd.read_csv(RAW_FILE)
 
 
-def save_processed(df: pd.DataFrame, name: str) -> None:
-    """Grava um dataset tratado em data/processed/."""
-    DATA_PROCESSED.mkdir(parents=True, exist_ok=True)
-    df.to_parquet(DATA_PROCESSED / f"{name}.parquet", index=False)
+def save_processed(df: pd.DataFrame) -> None:
+    """Grava o dataset tratado em data/processed/dataset_tratado.csv."""
+    PROCESSED_FILE.parent.mkdir(parents=True, exist_ok=True)
+    df.to_csv(PROCESSED_FILE, index=False)
 
 
-def load_processed(name: str) -> pd.DataFrame:
-    return pd.read_parquet(DATA_PROCESSED / f"{name}.parquet")
+def load_processed() -> pd.DataFrame:
+    """Lê o dataset tratado gerado pelo notebook 02."""
+    return pd.read_csv(PROCESSED_FILE)

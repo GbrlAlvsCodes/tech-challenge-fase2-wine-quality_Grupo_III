@@ -1,34 +1,37 @@
-"""Limpeza, escala e feature engineering.
+"""Limpeza e definição da variável alvo (mesmas decisões do notebook 02).
 
-Se você decidir NÃO criar features novas, documente a decisão e o porquê —
-a justificativa da não-aplicação é tão importante quanto a aplicação.
+Feature engineering: optamos por manter as 11 variáveis originais.
+A justificativa está no notebook 02, seção 4.
 """
 
 import pandas as pd
 
+from src.config import LIMIAR_ALTO, TARGET
+
 
 def check_missing(df: pd.DataFrame) -> pd.DataFrame:
-    """Resumo de nulos por coluna, em contagem e percentual."""
-    total = df.isna().sum()
-    pct = (total / len(df) * 100).round(2)
-    return (
-        pd.DataFrame({"nulos": total, "pct": pct})
-        .query("nulos > 0")
-        .sort_values("nulos", ascending=False)
-    )
+    """Nulos por coluna, em contagem e percentual."""
+    nulos = df.isnull().sum()
+    return pd.DataFrame({"nulos": nulos, "%": (nulos / len(df) * 100).round(2)})
 
 
-def binarize_target(df: pd.DataFrame, column: str, threshold: float) -> pd.DataFrame:
-    """Converte uma variável contínua em binária a partir de um limiar.
+def remove_duplicates(df: pd.DataFrame) -> pd.DataFrame:
+    """Remove a coluna Id (só numeração da linha) e as linhas duplicadas."""
+    return df.drop("Id", axis=1).drop_duplicates()
 
-    O limiar é uma decisão de modelagem: justifique-o no README com base na
-    distribuição observada, não apenas por convenção.
-    """
+
+def qualidade_do_vinho(qualidade: int) -> int:
+    """1 = Alto (nota >= 7), 0 = Baixo/Médio (nota < 7)."""
+    return 0 if qualidade < LIMIAR_ALTO else 1
+
+
+def build_target(df: pd.DataFrame) -> pd.DataFrame:
+    """Cria a variável alvo binária e remove a nota original (quality)."""
     out = df.copy()
-    out[f"{column}_bin"] = (out[column] >= threshold).astype(int)
-    return out
+    out[TARGET] = out["quality"].apply(qualidade_do_vinho)
+    return out.drop("quality", axis=1)
 
 
-def build_features(df: pd.DataFrame) -> pd.DataFrame:
-    """PREENCHER: crie aqui as features derivadas, uma função por ideia."""
-    return df.copy()
+def preprocess(df_raw: pd.DataFrame) -> pd.DataFrame:
+    """Pipeline completo do notebook 02: duplicatas + variável alvo."""
+    return build_target(remove_duplicates(df_raw))
