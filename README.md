@@ -81,16 +81,6 @@ source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 jupyter notebook
 ```
-Baixe o dataset e coloque o arquivo bruto em data/raw/ (os dados não são versionados em data/README.md).
-
-Depois execute os notebooks nesta ordem:
-
-<table>
-<tr><th>#</th><th>Notebook</th><th>O que faz</th></tr>
-<tr><td>1</td><td>notebooks/Projeto_II_Vinho.ipynb</td><td>Análise Completa</td></tr>
-</table>
-
-**Semente fixa:** RANDOM_STATE = 42
 
 ### 5. Resultados
 
