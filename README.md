@@ -1,72 +1,76 @@
-# Tech Challenge — Fase 2 | POSTECH Data Analytics
+[README.md](https://github.com/user-attachments/files/34245428/README.md)
+## Tech Challenge — Fase 2 | POSTECH Data Analytics
 
-> **INSTRUÇÕES:** este README é um template. Substitua **todos** os blocos marcados com
-> `<!-- PREENCHER -->` e apague as linhas de instrução antes de submeter.
+### 1. Identificação
 
----
+<table>
+<tr><th>Campo</th><th>Valor</th></tr>
+<tr><td>Turma</td><td>15DTAT</td></tr>
+<tr><td>Grupo</td><td>3</td></tr>
+<tr><td>Data de entrega</td><td>03/11/2026</td></tr>
+</table>
 
-## 1. Identificação
+#### Integrantes
 
-| Campo | Valor |
-|---|---|
-| Turma | <!-- PREENCHER: ex. 12DTAT --> |
-| Grupo | <!-- PREENCHER: ex. Grupo 07 --> |
-| Data de entrega | <!-- PREENCHER: DD/MM/AAAA --> |
+<table>
+<tr><th>Nome completo</th><th>RM</th><th>E-mail</th></tr>
+<tr><td>Gabriel Alves da Silva</td><td>RM376192</td><td>gasmeas10@gmail.com</td></tr>
+<tr><td>Dimitria Doi</td><td>RM376922</td><td>dimitria.ro@gmail.com</td></tr>
+<tr><td>Breno Plada Delege</td><td>RM377058</td><td>brenoplada@gmail.com</td></tr>
+<tr><td>Yan Souza Montes</td><td>RM376051</td><td>yansouzamontes@hotmail.com</td></tr>
+</table>
 
-### Integrantes
+### 2. Links da entrega
 
-| Nome completo | RM | E-mail |
-|---|---|---|
-| <!-- PREENCHER --> | RM000000 | |
-| | | |
-| | | |
-| | | |
-| | | |
+<table>
+<tr><th>Item</th><th>Link</th></tr>
+<tr><td>Repositório</td><td></td></tr>
+<tr><td>Vídeo executivo (≤ 5 min)</td><td></td></tr>
+<tr><td>Apresentação</td><td>t.</td></tr>
+</table>
 
----
+### 3. O problema
 
-## 2. Links da entrega
+A avaliação sensorial de vinhos depende de especialistas experientes, o que a torna demorada, cara e sujeita a variações entre avaliadores. Além disso, reunir um painel para analisar grandes volumes de amostras nem sempre é viável. Nesse contexto, o uso de características físico-químicas combinado a técnicas de Machine Learning permite prever a qualidade do vinho de forma rápida e consistente, reduzindo a dependência de avaliações humanas e apoiando decisões mais eficientes de classificação. Assim, este projeto desenvolve modelos de Machine Learning (ML) para classificar vinhos em alta qualidade ou baixa/média qualidade a partir de características físico-químicas.
 
-Estes três links são **obrigatórios** e devem ser idênticos aos do PDF de submissão.
+#### Variável alvo
 
-| Item | Link |
-|---|---|
-| Repositório | <!-- PREENCHER: URL pública do GitHub --> |
-| Vídeo executivo (≤ 5 min) | <!-- PREENCHER: YouTube não listado / Drive com acesso liberado --> |
-| Apresentação | <!-- PREENCHER: link do arquivo em `docs/` ou Drive --> |
+A variável alvo é a coluna quality (nota de 3 a 8 atribuída por especialistas), convertida em duas categorias:
 
-> ⚠️ Repositório privado ou inacessível inviabiliza a avaliação da entrega.
-> Confira o acesso em uma janela anônima antes de enviar.
+•	Alta qualidade: nota ≥ 7;
 
----
+•	Baixa/média qualidade: nota < 7.
 
-## 3. O problema
+A base é desbalanceada: apenas cerca de 13% dos vinhos são de alta qualidade. Por isso, a acurácia isolada pode enganar (um modelo que classificasse todos os vinhos como baixa/média qualidade acertaria cerca de 87% sem de fato distinguir as classes). Assim, a avaliação dos modelos prioriza o F1-score da classe alta, junto com precisão e recall, em vez de considerar apenas a acurácia.
 
-<!-- PREENCHER: contexto de negócio e a motivação para o uso de Machine Learning. -->
+#### Dataset
 
-### Variável alvo
+<table>
+<tr><th>Campo</th><th>Valor</th></tr>
+<tr><td>Fonte</td><td>https://www.kaggle.com/datasets/yasserh/wine-quality-dataset</td></tr>
+<tr><td>Linhas × colunas</td><td>1143 x 13</td></tr>
+<tr><td>Período / versão</td><td>1</td></tr>
+</table>
 
-<!-- PREENCHER: qual é a variável alvo, como foi definida e — se houve binarização —
-     qual limiar foi adotado e por quê. Justifique com base na distribuição das classes. -->
-
-### Dataset
-
-| Campo | Valor |
-|---|---|
-| Fonte | <!-- PREENCHER: URL --> |
-| Linhas × colunas | <!-- PREENCHER --> |
-| Período / versão | <!-- PREENCHER --> |
-| Licença de uso | <!-- PREENCHER --> |
-
-Descrição das variáveis:
+Descrição das variáveis principais:
 
 | Variável | Tipo | Descrição |
-|---|---|---|
-| | | |
+|-----------|------|------------|
+| Acidez fixa (Fixed Acidity) | Número decimal | Quantidade de ácidos não voláteis presentes no vinho. |
+| Acidez volátil (Volatile Acidity) | Número decimal | Representa os ácidos voláteis, principalmente o ácido acético. |
+| Ácido cítrico (Citric Acid) | Número decimal | Contribui para o frescor e equilíbrio sensorial. |
+| Açúcar residual (Residual Sugar) | Número decimal | Quantidade de açúcar que permanece após a fermentação. |
+| Cloretos (Chlorides) | Número decimal | Indicador da concentração de sais no vinho. |
+| Dióxido de enxofre livre | Número decimal | Proteção contra oxidação e microrganismos. |
+| Dióxido de enxofre total | Número decimal | Conservante e estabilizante. |
+| Densidade | Número decimal | Relacionada à composição do vinho. |
+| pH | Número decimal | Mede a acidez química do vinho. |
+| Sulfatos | Número decimal | Auxiliam na preservação e estrutura do vinho. |
+| Teor alcoólico | Número decimal | Influencia corpo, aroma e percepção de qualidade. |
+| Quality | Número inteiro | Variável-alvo prevista pelo modelo. |
+| ID | Número inteiro | Identificador da base. |
 
----
-
-## 4. Como reproduzir
+### 4. Como reproduzir
 
 ```bash
 git clone <URL_DO_REPOSITORIO>
@@ -78,69 +82,49 @@ source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 jupyter notebook
 ```
-
-Baixe o dataset e coloque o arquivo bruto em `data/raw/` (os dados **não** são versionados —
-veja `data/README.md`).
+Baixe o dataset e coloque o arquivo bruto em data/raw/ (os dados não são versionados — veja data/README.md).
 
 Depois execute os notebooks nesta ordem:
 
-| # | Notebook | O que faz |
-|---|---|---|
-| 1 | `notebooks/01_eda.ipynb` | Análise exploratória |
-| 2 | `notebooks/02_preprocessamento.ipynb` | Limpeza, escala e feature engineering |
-| 3 | `notebooks/03_modelagem.ipynb` | Treino e comparação dos modelos |
-| 4 | `notebooks/04_avaliacao.ipynb` | Métricas, importância de variáveis e conclusões |
+<table>
+<tr><th>#</th><th>Notebook</th><th>O que faz</th></tr>
+<tr><td>1</td><td>notebooks/Analise_Completa.ipynb</td><td>Análise Completa</td></tr>
+</table>
 
-**Semente fixa:** `RANDOM_STATE = 42`, declarada na primeira célula de cada notebook.
-Rodar os notebooks na ordem acima, a partir de um ambiente limpo, deve reproduzir
-exatamente os números da seção 5.
+**Semente fixa:** RANDOM_STATE = 42
 
----
-
-## 5. Resultados
+### 5. Resultados
 
 | Modelo | Acurácia | Precisão | Recall | F1 | AUC-ROC |
-|---|---|---|---|---|---|
-| <!-- PREENCHER --> | | | | | |
-| | | | | | |
+|---------|----------|----------|--------|----|---------|
+| Regressão Logística | 0.79 | 0.36 | 0.78 | 0.49 | 0.88 |
+| Árvore de Decisão | 0.81 | 0.40 | 0.78 | 0.52 | 0.79 |
+| Random Forest | 0.86 | 0.49 | 0.78 | 0.60 | 0.92 |
 
-**Modelo escolhido:** <!-- PREENCHER --> — <!-- PREENCHER: por quê. -->
+**Modelo escolhido:** Random Forest. O modelo apresentou o melhor desempenho geral entre os avaliados, alcançando os melhores resultados nas métricas analisadas.
 
-**Métricas priorizadas:** <!-- PREENCHER: justifique a escolha considerando o
-     desbalanceamento de classes e o custo de cada tipo de erro no contexto do negócio. -->
+### 6. Principais conclusões
 
----
+1. **Álcool:** costuma estar ligado à maturação da uva e a uma fermentação completa, sendo um dos fatores mais influentes na qualidade.
+2. **Acidez volátil:** principal fator negativo. O controle de higiene, oxigênio e temperatura ajuda a reduzir seu impacto.
+3. **Sulfatos:** níveis adequados contribuem para preservação e qualidade do vinho.
 
-## 6. Principais conclusões
+#### Limitações e próximos passos
 
-<!-- PREENCHER: 3 a 5 conclusões em linguagem de negócio.
-     Inclua quais variáveis mais influenciam o resultado e o que isso significa
-     na prática para quem vai usar o modelo. -->
+Uma das principais limitação da base dados é o desbalanceamento da qualidade dos vinhos, que nos trabalhos futuros podem usar o balanceamento para analisar ganho de eficiência. Além disso, recomenda-se confirmar com validação cruzada se todas as variáveis são realmente necessárias no modelo de ML. E o ideal no processo é acompanhar a maturação da uva e a fermentação para monitorar o teor alcoólico, controlar oxigênio, temperatura e higiene do processo para reduzir a acidez volátil e garantir níveis adequados de sulfatos para preservar a qualidade do vinho.
 
-1.
-2.
-3.
+### 7. Estrutura do repositório
 
-### Limitações e próximos passos
-
-<!-- PREENCHER -->
-
----
-
-## 7. Estrutura do repositório
-
-```
-.
 ├── data/          dados brutos (raw) e tratados (processed) — não versionados
-├── notebooks/     análise em ordem numerada
+
+├── notebooks/     análise
+
 └── docs/          apresentação executiva
-```
 
-Detalhes e convenções em [`ESTRUTURA.md`](ESTRUTURA.md).
-Antes de enviar, percorra o [`CHECKLIST.md`](CHECKLIST.md).
+### 8. Tecnologias
 
----
-
-## 8. Tecnologias
-
-<!-- PREENCHER: Python 3.11, pandas, scikit-learn, ... -->
+- Python 3.12
+- Pandas
+- NumPy
+- Seaborn
+- Scikit-learn
