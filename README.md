@@ -26,7 +26,7 @@
 <tr><th>Item</th><th>Link</th></tr>
 <tr><td>Repositório</td><td>https://github.com/GbrlAlvsCodes/tech-challenge-fase2-wine-quality_Grupo_III</td></tr>
 <tr><td>Vídeo executivo (≤ 5 min)</td><td>https://www.youtube.com/watch?v=o-YT9hCTqB8</td></tr>
-<tr><td>Apresentação</td><td>[t.](https://github.com/GbrlAlvsCodes/tech-challenge-fase2-wine-quality_Grupo_III/blob/main/docs/apresentacao_executiva.pdf)</td></tr>
+<tr><td>Apresentação</td><td>(https://github.com/GbrlAlvsCodes/tech-challenge-fase2-wine-quality_Grupo_III/blob/main/docs/apresentacao_executiva.pdf)</td></tr>
 </table>
 
 ### 3. O problema
