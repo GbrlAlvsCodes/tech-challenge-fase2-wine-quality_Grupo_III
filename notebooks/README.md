@@ -12,22 +12,8 @@ Ordem numerada obrigatória. Cada notebook roda de cima para baixo em ambiente l
 
 1. Baixe o `WineQT.csv` (instruções em `data/README.md`) e salve em `data/raw/WineQT.csv`.
 2. Instale as dependências: `pip install -r requirements.txt`.
-3. Abra os notebooks a partir desta pasta (`notebooks/`) e rode na ordem **01 → 02 → 03 → 04**.
-   Cada um depende do arquivo gerado pelo anterior:
 
 ```
-data/raw/WineQT.csv
-      │
-      ▼
-01_eda ──► 02_preprocessamento ──► data/processed/dataset_tratado.csv
-                                            │
-                                            ▼
-                                     03_modelagem ──► results/models/grids_padronizados.joblib
-                                                                │
-                                                                ▼
-                                                         04_avaliacao
-```
-
 `Projeto_II_Vinho.ipynb` não depende dos outros: lê o CSV direto e roda tudo sozinho.
 Ele foi desenvolvido no Google Colab, então o caminho do arquivo aponta para
 `/content/WineQT.csv`. Para rodar localmente, troque `CAMINHO_DADOS` para
