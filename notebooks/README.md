@@ -6,10 +6,6 @@ Ordem numerada obrigatória. Cada notebook roda de cima para baixo em ambiente l
 
 | Arquivo | Escopo |
 |---|---|
-| `01_eda.ipynb` | visão geral e dicionário de variáveis, distribuições, outliers, correlações, balanceamento, análise por categoria (Baixo/Médio x Alto) e síntese da EDA |
-| `02_preprocessamento.ipynb` | nulos, duplicatas, definição do alvo (nota ≥ 7 = Alto), padronização e feature engineering; gera `data/processed/dataset_tratado.csv` |
-| `03_modelagem.ipynb` | split treino/teste estratificado, validação cruzada (5 folds), Regressão Logística, Árvore de Decisão e Random Forest em três etapas (sem ajuste, GridSearchCV, GridSearchCV + padronização); salva os modelos em `results/models/` |
-| `04_avaliacao.ipynb` | métricas no teste (precisão, recall, F1, AUC-ROC), matriz de confusão, curva ROC, importância das variáveis, implicações práticas e limitações |
 | `Projeto_II_Vinho.ipynb` | projeto completo em um único notebook, com todas as etapas e gráficos. Versão original do trabalho, que deu origem aos quatro notebooks acima |
 
 ## Como executar
