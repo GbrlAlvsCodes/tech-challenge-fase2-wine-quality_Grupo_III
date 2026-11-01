@@ -23,10 +23,3 @@
    - **Localmente:** na segunda célula, troque `CAMINHO_DADOS` para `'../data/raw/WineQT.csv'`.
 3. Execute com `Kernel → Restart & Run All`.
 
-## Regras
-
-- A numeração das células está em ordem crescente (`[1]`, `[2]`, `[3]`...).
-- As saídas dos gráficos ficam salvas no notebook, para que o avaliador veja os resultados
-  sem executar nada.
-- Todo gráfico tem um parágrafo de interpretação em markdown logo abaixo.
-- `RANDOM_STATE = 42` é definido no início e usado em todos os pontos com aleatoriedade.
