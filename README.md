@@ -100,7 +100,7 @@ jupyter notebook
 
 #### Limitações e próximos passos
 
-Uma das principais limitações da base dados é o desbalanceamento da qualidade dos vinhos, que nos trabalhos futuros podem usar o balanceamento para analisar ganho de eficiência. Além disso, recomenda-se confirmar com validação cruzada se todas as variáveis são realmente necessárias no modelo de ML. E o ideal no processo é acompanhar a maturação da uva e a fermentação para monitorar o teor alcoólico, controlar oxigênio, temperatura e higiene do processo para reduzir a acidez volátil e garantir níveis adequados de sulfatos para preservar a qualidade do vinho.
+Uma das principais limitações da base dados é o desbalanceamento da qualidade dos vinhos, que nos trabalhos futuros testar SMOTE. Além disso, recomenda-se confirmar com validação cruzada se todas as variáveis são realmente necessárias no modelo de ML. E o ideal no processo é acompanhar a maturação da uva e a fermentação para monitorar o teor alcoólico, controlar oxigênio, temperatura e higiene do processo para reduzir a acidez volátil e garantir níveis adequados de sulfatos para preservar a qualidade do vinho.
 
 
 ### 7. Estrutura do repositório
