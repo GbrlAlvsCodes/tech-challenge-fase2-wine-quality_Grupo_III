@@ -124,7 +124,7 @@ Uma das principais limitação da base dados é o desbalanceamento da qualidade 
 ├── requirements.txt                   bibliotecas usadas, com versões fixas
 │
 ├── data/
-│   ├── README.md                      instruções para baixar o dataset
+│   ├── README.md                      sobre o dataset
 │   └── raw/                           WineQT.csv, baixado do Kaggle
 │
 ├── docs/
