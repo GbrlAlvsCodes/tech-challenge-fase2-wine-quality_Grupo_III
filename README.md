@@ -123,10 +123,10 @@ Uma das principais limitação da base dados é o desbalanceamento da qualidade 
 
 ### 8. Tecnologias
 
-Python==3.13.18
-pandas==2.2.3
-numpy==2.1.3
-scikit-learn==1.6.1
+- Python==3.13.18
+- pandas==2.2.3
+- numpy==2.1.3
+- scikit-learn==1.6.1
 matplotlib==3.10.0
 seaborn==0.13.2
 jupyter==1.1.1
