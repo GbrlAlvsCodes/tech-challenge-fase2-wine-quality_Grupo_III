@@ -15,6 +15,4 @@ tintos e a nota de qualidade dada por especialistas.
 - 1.143 linhas e 13 colunas (11 variáveis físico-químicas, `quality` e `Id`)
 - Sem valores faltantes
 - 125 linhas duplicadas, removidas no pré-processamento (1.018 vinhos após a limpeza)
-- Dicionário de variáveis: `notebooks/01_eda.ipynb`, seção 1
-
-
+- Dicionário de variáveis: `notebooks/Projeto_II_Vinho.ipynb`, seção 1
