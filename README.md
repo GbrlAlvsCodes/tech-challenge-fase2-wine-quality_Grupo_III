@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/34245428/README.md)
 ## Tech Challenge — Fase 2 | POSTECH Data Analytics
 
 ### 1. Identificação
