@@ -1,11 +1,7 @@
-## 7. Estrutura do repositório
+## Estrutura do repositório
 
 ```
-.
-├── .github/
-│   ├── workflows/validar-entrega.yml  validação automática da entrega a cada commit
-│   └── PULL_REQUEST_TEMPLATE.md
-├── .gitignore                         bloqueia dados e modelos serializados
+
 ├── CHECKLIST.md
 ├── ESTRUTURA.md
 ├── LICENSE
