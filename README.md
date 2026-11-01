@@ -73,8 +73,8 @@ Descrição das variáveis principais:
 ### 4. Como reproduzir
 
 ```bash
-git clone <URL_DO_REPOSITORIO>
-cd <NOME_DO_REPOSITORIO>
+git clone https://github.com/GbrlAlvsCodes/tech-challenge-fase2-wine-quality_Grupo_III.git
+cd tech-challenge-fase2-wine-quality_Grupo_III
 
 python -m venv .venv
 source .venv/bin/activate        # Windows: .venv\Scripts\activate
