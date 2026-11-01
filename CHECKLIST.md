@@ -5,7 +5,7 @@ Rode esta lista antes de submeter.
 ## Acesso (causa nº 1 de problema na entrega)
 
 - [ ] Repositório **público** — confirmado em janela anônima
-- [ ] Vídeo abre sem pedir permissão — confirmado em janela anônima
+- [x] Vídeo abre sem pedir permissão — confirmado em janela anônima
 - [ ] Apresentação abre e está em PDF
 
 ## Repositório
