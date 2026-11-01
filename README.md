@@ -115,12 +115,32 @@ Uma das principais limitação da base dados é o desbalanceamento da qualidade 
 
 ### 7. Estrutura do repositório
 
-├── data/          dados brutos (raw) e tratados (processed) — não versionados
+## 7. Estrutura do repositório
 
-├── notebooks/     análise
-
-└── docs/          apresentação executiva
-
+```
+.
+├── LICENSE
+├── README.md                          este arquivo
+├── requirements.txt                   bibliotecas usadas, com versões fixas
+│
+├── data/
+│   ├── README.md                      instruções para baixar o dataset
+│   └── raw/                           WineQT.csv, baixado do Kaggle
+│
+├── docs/
+│   └── apresentacao_executiva.pdf     apresentação executiva
+│
+├── notebooks/
+│   ├── README.md                      seções do notebook e como executar
+│   └── Projeto_II_Vinho.ipynb         projeto completo: EDA, pré-processamento, modelagem e avaliação
+│
+└── results/
+    ├── README.md
+    ├── figures/                       14 gráficos do projeto exportados em .png
+    └── metrics/
+        ├── comparacao_etapas.csv      métricas dos 3 modelos nas 3 etapas
+        └── modelos_finais_teste.csv   métricas e matriz de confusão dos modelos finais
+```
 ### 8. Tecnologias
 
 - Python 3.13.18
