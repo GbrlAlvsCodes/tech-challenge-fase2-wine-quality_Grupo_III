@@ -24,7 +24,7 @@
 
 <table>
 <tr><th>Item</th><th>Link</th></tr>
-<tr><td>Repositório</td><td></td></tr>
+<tr><td>Repositório</td><td>https://github.com/GbrlAlvsCodes/tech-challenge-fase2-wine-quality_Grupo_III</td></tr>
 <tr><td>Vídeo executivo (≤ 5 min)</td><td></td></tr>
 <tr><td>Apresentação</td><td>t.</td></tr>
 </table>
