@@ -82,7 +82,7 @@ source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 jupyter notebook
 ```
-Baixe o dataset e coloque o arquivo bruto em data/raw/ (os dados não são versionados — veja data/README.md).
+Baixe o dataset e coloque o arquivo bruto em data/raw/ (os dados não são versionados em data/README.md).
 
 Depois execute os notebooks nesta ordem:
 
