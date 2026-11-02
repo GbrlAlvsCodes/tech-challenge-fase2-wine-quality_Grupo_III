@@ -87,7 +87,7 @@ jupyter notebook
 | Modelo | Acurácia | Precisão | Recall | F1 | AUC-ROC |
 |---------|----------|----------|--------|----|---------|
 | Regressão Logística | 0.79 | 0.36 | 0.78 | 0.49 | 0.88 |
-| Árvore de Decisão | 0.81 | 0.40 | 0.78 | 0.52 | 0.79 |
+| Árvore de Decisão | 0.81 | 0.40 | 0.78 | 0.53 | 0.79 |
 | Random Forest | 0.86 | 0.49 | 0.74 | 0.59 | 0.92 |
 
 **Modelo escolhido:** Random Forest. O modelo apresentou o melhor desempenho geral entre os avaliados, alcançando os melhores resultados nas métricas analisadas.
